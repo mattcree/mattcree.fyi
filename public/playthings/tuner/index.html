@@ -33,7 +33,6 @@
     .ctl select { grid-column: 2 / -1; width: 100%; background: #444; color: #eee; border: 1px solid #555; border-radius: 3px; padding: 0.2rem 0.3rem; }
     .ctl input[type=checkbox] { justify-self: start; accent-color: #bbb; }
     .ctl.changed label { color: #fff; }
-    .ctl.changed::before { content: ""; }
     .panel .tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
     .panel button { background: #555; color: #fff; border: 0; border-radius: 3px; padding: 0.3rem 0.6rem; cursor: pointer; }
     textarea { width: 100%; height: 11rem; font: 11px/1.4 ui-monospace, monospace; background: #1f1f1f; color: #ddd; border: 1px solid #444; padding: 0.5rem; margin-top: 0.4rem; }
@@ -234,10 +233,11 @@ function paint(s) {
   page.classList.toggle('dropcap', Boolean(s.dropcap));
   if (!page.innerHTML) page.innerHTML = SPECIMEN;
 }
-function set(key, value, opts = {}) {
-  if (!opts.silent) { history.push({ ...state }); prev = { ...state }; if (history.length > 200) history.shift(); }
+let dragKey = null; // the control being dragged; one history entry per drag, not per pixel
+function set(key, value) {
+  if (dragKey !== key) { history.push({ ...state }); prev = { ...state }; if (history.length > 200) history.shift(); dragKey = key; }
   state = { ...state, [key]: value };
-  paint(state); syncPanel(); persist();
+  paint(state); syncPanel(key); persist();
 }
 function persist() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 function say(msg) { flash.textContent = msg; flash.classList.add('on'); clearTimeout(say.t); say.t = setTimeout(() => flash.classList.remove('on'), 1200); }
@@ -259,20 +259,32 @@ function buildPanel() {
       const v = c.kind === 'range' ? Number(el.value) : c.kind === 'toggle' ? el.checked : el.value;
       set(c.key, v);
     });
+    el.addEventListener('change', () => { dragKey = null; });
   }
   document.getElementById('copy').addEventListener('click', () => { navigator.clipboard?.writeText(cssOut()); say('CSS copied'); });
   document.getElementById('copyjson').addEventListener('click', () => { navigator.clipboard?.writeText(JSON.stringify(state)); say('Settings copied'); });
 }
-function syncPanel() {
+// Refresh the panel from state. The control that caused the change (`active`) is
+// left alone apart from its readout: rewriting a slider's value mid-drag makes
+// it jump, and Firefox drops the drag entirely.
+function syncPanel(active) {
   for (const c of KEYS) {
     const el = document.getElementById('c-' + c.key);
     const row = el.closest('.ctl');
-    if (c.kind === 'range') { el.value = state[c.key]; row.querySelector('.val').textContent = state[c.key] + (c.unit || ''); }
-    else if (c.kind === 'select') el.value = state[c.key];
-    else { el.checked = state[c.key]; row.querySelector('.val').textContent = state[c.key] ? 'on' : 'off'; }
-    row.classList.toggle('changed', state[c.key] !== DEFAULTS[c.key]);
+    const v = state[c.key];
+    if (c.kind === 'range') {
+      if (c.key !== active && Number(el.value) !== v) el.value = v;
+      row.querySelector('.val').textContent = v + (c.unit || '');
+    } else if (c.kind === 'select') {
+      if (c.key !== active && el.value !== v) el.value = v;
+    } else {
+      if (c.key !== active && el.checked !== v) el.checked = v;
+      row.querySelector('.val').textContent = v ? 'on' : 'off';
+    }
+    row.classList.toggle('changed', v !== DEFAULTS[c.key]);
   }
-  const css = document.getElementById('css'); if (css) css.value = cssOut();
+  const css = document.getElementById('css');
+  if (css && document.activeElement !== css) { const out = cssOut(); if (css.value !== out) css.value = out; }
 }
 function cssOut() {
   const t = tokens(state);
@@ -287,10 +299,10 @@ cmp.addEventListener('pointerdown', down); cmp.addEventListener('pointerup', up)
 document.addEventListener('keydown', (e) => { if (e.key === ' ' && e.target === document.body) { e.preventDefault(); down(); } });
 document.addEventListener('keyup', (e) => { if (e.key === ' ') up(); });
 
-document.getElementById('undo').addEventListener('click', () => { const h = history.pop(); if (!h) return say('Nothing to undo'); state = h; prev = h; paint(state); syncPanel(); persist(); });
-document.getElementById('reset').addEventListener('click', () => { history.push({ ...state }); prev = { ...state }; state = { ...DEFAULTS }; paint(state); syncPanel(); persist(); });
+document.getElementById('undo').addEventListener('click', () => { dragKey = null; const h = history.pop(); if (!h) return say('Nothing to undo'); state = h; prev = h; paint(state); syncPanel(); persist(); });
+document.getElementById('reset').addEventListener('click', () => { dragKey = null; history.push({ ...state }); prev = { ...state }; state = { ...DEFAULTS }; paint(state); syncPanel(); persist(); });
 document.getElementById('random').addEventListener('click', () => {
-  history.push({ ...state }); prev = { ...state };
+  dragKey = null; history.push({ ...state }); prev = { ...state };
   const r = {};
   for (const c of KEYS) {
     if (c.kind === 'range') { const n = Math.round((c.min + Math.random() * (c.max - c.min)) / c.step) * c.step; r[c.key] = Number(n.toFixed(2)); }
