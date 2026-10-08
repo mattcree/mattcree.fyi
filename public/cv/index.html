@@ -14,7 +14,7 @@
 <body class="cv">
   <main>
     <nav class="cv-nav">
-      <a class="tape small" href="/">mattcree.fyi</a>
+      <a class="tape small" href="https://mattcree.fyi">mattcree.fyi</a>
       <button type="button" class="print" onclick="window.print()">Save as PDF</button>
     </nav>
 
@@ -26,8 +26,7 @@
         <dt>GitHub</dt><dd><a href="https://github.com/mattcree">github.com/mattcree</a></dd>
         <dt>LinkedIn</dt><dd><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></dd>
       </dl>
-      <p>Software engineer with an interest in functional programming and distributed systems. Nine years across Salesforce DevOps tooling, education platforms, security analytics and consultancy, mostly full stack, with a habit of ending up in the low-level corners: git internals, merge algorithms, 3D interfaces, Erlang.</p>
-      <p>I studied music formally before computing and still play, mainly guitar.</p>
+      <p>Software engineer, nine years, full stack. Mostly developer tooling and backend systems. Interested in functional programming and distributed systems.</p>
     </header>
 
     <section>
@@ -37,32 +36,32 @@
         <div class="when">May 2022 to present</div>
         <div class="what">
           <h3>Senior Software Engineer<span class="at">Gearset, Belfast</span></h3>
-          <p>Full-stack engineer on a Salesforce DevOps platform used by over 3,000 enterprises.</p>
-          <ul><li>Work deep in git internals. Found two bugs in git itself and took them to the git mailing list with repeatable reproductions and an initial diagnosis.</li><li>Take the customer issues that exceed what support can handle, and mentor newer engineers on practice and collaboration.</li><li>Pushed for written decision records and design sketches in Notion, which made technical discussions easier to follow and revisit.</li></ul>
+          <p>Salesforce DevOps platform. C#, ASP.NET Core, React, TypeScript.</p>
+          <ul><li>Found two bugs in git while working on the semantic merge driver. Reported both on the git mailing list with reproductions.</li><li>Handle customer issues escalated past support.</li><li>Mentor newer engineers.</li><li>Introduced decision records and written design proposals on the team.</li></ul>
           
           <div class="project">
             <h4>Observability</h4>
-            <p class="note">Winner of the Computing DevOps Excellence Award for best monitoring and performance tool.</p>
-            <p>Lead engineer. Real-time monitoring of Salesforce Flow failures and unhandled Apex exceptions. The system ingests Salesforce's auto-generated error emails, consolidates them into one view with the failed element and interview context, charts trends, and alerts on configurable rules and thresholds.</p>
+            <p class="note">Computing DevOps Excellence Award, best monitoring and performance tool.</p>
+            <p>Lead engineer. Monitors Salesforce Flow failures and unhandled Apex exceptions. Ingests Salesforce's error emails, groups them, shows the failed element and interview context, charts trends, alerts on configurable thresholds.</p>
             <p class="stack">AWS (SES, SQS, SNS), Kubernetes, Terraform, React, TypeScript</p>
           </div>
           <div class="project">
             <h4>Semantic merge conflict resolver</h4>
             
-            <p>Led design and implementation. Resolves conflicts in Salesforce metadata XML by understanding its structure, covering the cases where a text merge produces invalid or wrong output, with a UI for both semantic and plain text conflicts.</p>
+            <p>Led design and implementation. Resolves conflicts in Salesforce metadata XML using its structure rather than text. UI for semantic and text conflicts.</p>
             
           </div>
           <div class="project">
             <h4>SAML single sign-on</h4>
             
-            <p>SAML 2.0 authentication for enterprise customers against Okta, Auth0 and Azure AD, with certificate validation, response verification and session management.</p>
-            <p class="stack">C#, ASP.NET Core, React, TypeScript</p>
+            <p>SAML 2.0 for enterprise customers. Okta, Auth0, Azure AD. Certificate validation, response verification, session management.</p>
+            
           </div>
           <div class="project">
             <h4>Authorised connection management</h4>
             
-            <p>Role-based control over which team members can reach which Salesforce environments, with audit logging of access and permission changes.</p>
-            <p class="stack">C#, ASP.NET Core, React, TypeScript, Salesforce API</p>
+            <p>Role-based access to Salesforce environments per team member. Audit log of access and permission changes.</p>
+            
           </div>
           
         </div>
@@ -72,10 +71,10 @@
         <div class="when">March 2021 to May 2022</div>
         <div class="what">
           <h3>Polyglot Software Engineer<span class="at">Faria Education Group, Exam Systems team, remote</span></h3>
-          <p>Curriculum and learning systems for over 10,000 schools in 155 countries.</p>
-          <ul><li>Built MiniPD, a professional learning platform for educators, in Elixir, Phoenix and Vue.js.</li><li>Then moved to integration work connecting products across Faria's range in Ruby on Rails, CoffeeScript, AngularJS and PostgreSQL.</li></ul>
+          <p>Curriculum and learning systems for schools.</p>
+          <ul><li>Built MiniPD, a professional learning platform for educators. Elixir, Phoenix, Vue.js.</li><li>Integration work between Faria products. Ruby on Rails, CoffeeScript, AngularJS, PostgreSQL.</li></ul>
           
-          <p class="stack">Elixir, Phoenix, Vue.js, AWS (SES, ECS, CloudFormation, RDS), Ruby on Rails, PostgreSQL</p>
+          <p class="stack">AWS (SES, ECS, CloudFormation, RDS)</p>
         </div>
       </article>
 
@@ -83,25 +82,25 @@
         <div class="when">September 2019 to March 2021</div>
         <div class="what">
           <h3>Software Engineer<span class="at">Instil Software, Belfast</span></h3>
-          <p>Consultancy. Full-stack delivery across several client engagements.</p>
+          <p>Consultancy.</p>
           
           
           <div class="project">
-            <h4>Venue modelling and audio prediction tool for Bose</h4>
+            <h4>Venue modelling and audio prediction tool, Bose</h4>
             
-            <p>A CAD-like desktop application for sound engineers: draw the venue, place sources, and see a colour-coded sound pressure overlay that guides speaker placement. Owned application state management, the save file format and shutdown handling.</p>
+            <p>Desktop CAD-style tool for sound engineers. Draw a venue, place speakers, see predicted sound pressure levels as a colour overlay. Owned state management, save file format and shutdown handling.</p>
             <p class="stack">Electron, React, Redux, TypeScript, React Three Fiber, Three.js, Jest, Spectron</p>
           </div>
           <div class="project">
             <h4>Dependaroo</h4>
             
-            <p>A Bitbucket plugin that watches npm, Yarn, Gradle and Maven dependencies, raises pull requests for updates, and lets teams set policy on which updates go through automatically.</p>
+            <p>Bitbucket plugin. Detects npm, Yarn, Gradle and Maven dependency updates, opens pull requests, applies per-team update policy.</p>
             <p class="stack">TypeScript, Node.js, Bitbucket API</p>
           </div>
           <div class="project">
             <h4>Tyco support portal redesign</h4>
             
-            <p>Led the UI overhaul of the portal used by security camera integrators: legacy code to React, responsive layout, and a component library to keep it consistent.</p>
+            <p>Led the UI rewrite from legacy code to React. Responsive layout, component library.</p>
             <p class="stack">React, Redux, TypeScript, SCSS, Jest, React Testing Library</p>
           </div>
           
@@ -116,15 +115,15 @@
           
           
           <div class="project">
-            <h4>American Dynamics support portal Android app</h4>
+            <h4>American Dynamics support portal, Android</h4>
             
-            <p>Knowledge base search, embedded forums, account management and biometric login, white-labelled per brand with Android product flavours.</p>
+            <p>Knowledge base search, forums, account management, biometric login. White-labelled per brand with product flavours.</p>
             <p class="stack">Kotlin, Android Jetpack, coroutines, data binding</p>
           </div>
           <div class="project">
             <h4>File management system</h4>
             
-            <p>Hierarchy in RDS, files in S3, streaming uploads through a Dropwizard API, directory-level permissions and shareable links.</p>
+            <p>Directory tree in RDS, files in S3, streaming uploads via Dropwizard, per-directory permissions, share links.</p>
             <p class="stack">Angular, Dropwizard, Amazon S3, RDS, JOOQ</p>
           </div>
           
@@ -135,8 +134,8 @@
         <div class="when">September 2017 to June 2018</div>
         <div class="what">
           <h3>Associate Software Engineer<span class="at">Alert Logic, Analytics Platform team, Belfast</span></h3>
-          <p>NGX, an Erlang system that detects security incidents from Snort and log sources.</p>
-          <ul><li>Found and fixed a production bug that was silently losing customer incident data.</li><li>Extended the incident API so data scientists and front-end teams could query it efficiently.</li></ul>
+          <p>NGX, an Erlang security incident detection system fed by Snort and log sources.</p>
+          <ul><li>Fixed a production bug that was dropping customer incident data.</li><li>Extended the incident API for data science and front-end use.</li></ul>
           
           <p class="stack">Erlang, Python, MySQL, Meck, Rebar3, Docker, AWS Lambda, Kinesis</p>
         </div>
@@ -146,7 +145,7 @@
         <div class="when">September 2012 to August 2016</div>
         <div class="what">
           <h3>Ask4Help Assistant<span class="at">Northumbria University library, Newcastle upon Tyne</span></h3>
-          <p>Night shift at the university library through my music degree and MSc: student enquiries, welfare checks, patrols, and the basement coffee shop.</p>
+          <p>Night shift at the university library during my degrees.</p>
           
           
           
@@ -161,15 +160,15 @@
         <div class="when">2016 to 2017</div>
         <div class="what">
           <h3>MSc Computer Science, distinction<span class="at">Newcastle University</span></h3>
-          <p>Advanced programming, distributed computing, algorithms and complexity, database systems. Built Routeline, a rail navigation app using Dijkstra's algorithm on Play Framework, and BiSignal, real-time cyclist tracking over Phoenix channels. Research project on machine learning for music recommendation.</p>
+          <p>Projects: Routeline, rail route finding with Dijkstra's algorithm on Play Framework. BiSignal, live cyclist tracking over Phoenix channels. Research project on music recommendation.</p>
         </div>
       </article>
 
       <article class="entry">
         <div class="when">2009 to 2012</div>
         <div class="what">
-          <h3>BMus Jazz, Popular and Commercial Music, performance pathway<span class="at">University of Sunderland at The Sage Gateshead</span></h3>
-          <p>Guitar performance, theory, composition and arranging. Distinction for the final recital. Arranged for and led the guitar quartet Swing Fingers around the North East.</p>
+          <h3>BMus Jazz, Popular and Commercial Music<span class="at">University of Sunderland at The Sage Gateshead</span></h3>
+          <p>Guitar, performance pathway. Distinction for the final recital. Arranged for and led a guitar quartet.</p>
         </div>
       </article>
 
@@ -186,16 +185,16 @@
       <h2>Skills</h2>
       <dl class="skills">
         <dt>Languages</dt><dd>TypeScript, JavaScript, C#, Elixir, Erlang, Java, Kotlin, Python, Ruby</dd>
-        <dt>Front end</dt><dd>React, Redux, Vue.js, Electron, Three.js and React Three Fiber, Storybook, Jest and Testing Library</dd>
+        <dt>Front end</dt><dd>React, Redux, Vue.js, Electron, Three.js, Storybook, Jest</dd>
         <dt>Back end</dt><dd>ASP.NET Core, Phoenix, Rails, Dropwizard, Node.js, PostgreSQL, MySQL</dd>
-        <dt>Infrastructure</dt><dd>AWS (Lambda, S3, SES, SQS, SNS, Kinesis, ECS, CDK), Kubernetes, Terraform, Docker, Linux, git internals</dd>
-        <dt>Mobile</dt><dd>Android with Kotlin, some Swift</dd>
+        <dt>Infrastructure</dt><dd>AWS, Kubernetes, Terraform, Docker, Linux, git internals</dd>
+        <dt>Mobile</dt><dd>Android, Kotlin</dd>
       </dl>
     </section>
 
     <section>
       <h2>Elsewhere</h2>
-      <p>Away from work I build games, poke at old radios, and run a cupboard of servers. First computer: a Sinclair ZX Spectrum +2. Some of it is in the <a href="/playthings">playthings</a>.</p>
+      <p>Games, old radios, a homelab. First computer: Sinclair ZX Spectrum +2. Some of it is at <a href="https://mattcree.fyi/playthings">mattcree.fyi/playthings</a>.</p>
     </section>
   </main>
 </body>

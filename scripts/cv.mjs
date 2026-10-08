@@ -48,7 +48,7 @@ export function renderCv(cv) {
 <body class="cv">
   <main>
     <nav class="cv-nav">
-      <a class="tape small" href="/">mattcree.fyi</a>
+      <a class="tape small" href="https://mattcree.fyi">mattcree.fyi</a>
       <button type="button" class="print" onclick="window.print()">Save as PDF</button>
     </nav>
 
@@ -82,7 +82,7 @@ ${cv.skills.map((s) => `        <dt>${esc(s.group)}</dt><dd>${esc(s.items)}</dd>
 
     <section>
       <h2>Elsewhere</h2>
-      <p>${esc(cv.elsewhere)} Some of it is in the <a href="/playthings">playthings</a>.</p>
+      <p>${esc(cv.elsewhere)} Some of it is at <a href="https://mattcree.fyi/playthings">mattcree.fyi/playthings</a>.</p>
     </section>
   </main>
 </body>

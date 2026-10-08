@@ -1,6 +1,7 @@
 # mattcree.fyi
 
-Static site. No framework. `public/` is what gets deployed. Hosted on Cloudflare Workers static assets (worker `mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare.
+Static site. No framework. `public/` is what gets deployed. Hosted on a Cloudflare Worker (`mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare. `src/worker.js` serves `public/`
+and maps cv.mattcree.fyi onto `public/cv/`.
 
 ```
 public/
@@ -29,8 +30,8 @@ Cloudflare Builds clone shallowly, so the git-date fallback may not work there. 
 ## CV
 
 Content lives in `cv/cv.json`; `scripts/cv.mjs` turns it into `public/cv/index.html` on every build.
-Projects sit under the role they happened at. The page has a print stylesheet, so "Save as PDF" in the
-browser is the PDF version. There is no separate PDF file to keep in sync.
+Served at https://cv.mattcree.fyi (the worker rewrites that host to `/cv/`). Projects sit under the role they happened
+at. The page has a print stylesheet, so "Save as PDF" in the browser is the PDF version. Keep the copy terse and factual.
 
 ## Local preview
 
