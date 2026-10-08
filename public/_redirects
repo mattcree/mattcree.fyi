@@ -1,0 +1,3 @@
+# The previous site lived at the root. Keep old links working.
+/contact.html  /digital-domain/contact  301
+/thoughts.html /digital-domain/thoughts 301

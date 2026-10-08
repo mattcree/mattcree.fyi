@@ -1,6 +1,6 @@
 # mattcree.fyi
 
-Static site. No framework. `public/` is what gets deployed.
+Static site. No framework. `public/` is what gets deployed. Hosted on Cloudflare Pages (project `mattcree-fyi`), DNS on Cloudflare.
 
 ```
 public/
@@ -11,13 +11,17 @@ public/
     <slug>/index.html   one folder per plaything
     <slug>/meta.json    optional: { "title", "blurb", "date", "wide" }
   digital-domain/       the previous site, untouched
+  _redirects            Cloudflare Pages redirects for the old root URLs
+  404.html              without this, Pages serves / for every unknown path
 ```
 
 ## Adding a plaything
 
 1. Drop a folder into `public/playthings/` with an `index.html` in it. Anything self-contained works, including a Claude artifact saved as HTML.
 2. Optionally add `meta.json` beside it. Without one, the title comes from `<title>`, the blurb from `<meta name="description">`, and the date from the folder's first git commit.
-3. Run `npm run build` to regenerate the index. Vercel runs this on every deploy anyway, so committing the folder is enough.
+3. Run `npm run build` to regenerate the index. Pages runs this on every deploy anyway, so committing the folder is enough.
+
+Pages clones shallowly, so the git-date fallback may not work in its builds. Put a `date` in `meta.json` if the date matters.
 
 `"wide": true` in `meta.json` makes the tile span two columns on the playthings page.
 
@@ -25,4 +29,15 @@ public/
 
 ```
 npm run dev
+```
+
+## Deploying
+
+Pushes to `main` deploy automatically once the repo is connected in the Cloudflare dashboard
+(Workers & Pages, project settings: build command `npm run build`, output directory `public`).
+
+Manual deploy from this machine:
+
+```
+npm run build && npx wrangler pages deploy public --project-name mattcree-fyi
 ```
