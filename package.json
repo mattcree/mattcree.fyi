@@ -1,0 +1,9 @@
+{
+  "name": "mattcree.fyi",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && npx -y serve public"
+  }
+}

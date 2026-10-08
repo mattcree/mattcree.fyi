@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timecube clock</title>
+  <meta name="description" content="Which of the 4 simultaneous corner days is it right now?">
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #0b0b1a; color: #fff;
+      font-family: "Roboto Mono", ui-monospace, monospace; text-align: center;
+    }
+    .stage { display: grid; gap: 1.5rem; padding: 2rem 1rem; }
+    .cube {
+      width: min(60vw, 260px); aspect-ratio: 1; margin: 0 auto; position: relative;
+      transition: transform 1s ease;
+    }
+    .face {
+      position: absolute; inset: 0; border: 3px solid #ff00ff;
+      background: linear-gradient(135deg, #000033, #660066);
+      box-shadow: 0 0 30px #00ffff;
+    }
+    .corner {
+      position: absolute; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      background: #333; border: 2px solid #888; display: grid; place-items: center;
+      font-size: 0.75rem; color: #aaa;
+    }
+    .corner.on { background: #ffff00; color: #000; border-color: #fff; box-shadow: 0 0 14px #ffff00; }
+    .nw { top: -0.8rem; left: -0.8rem; }   .ne { top: -0.8rem; right: -0.8rem; }
+    .se { bottom: -0.8rem; right: -0.8rem; } .sw { bottom: -0.8rem; left: -0.8rem; }
+    h1 { font-size: clamp(1.6rem, 6vw, 2.6rem); margin: 0; color: #00ff00; text-shadow: 2px 2px 0 #000; }
+    p { margin: 0; color: #ccc; max-width: 32ch; margin-inline: auto; }
+    .shout { color: #ff9900; font-weight: bold; }
+    a { color: #00ffff; }
+    @media (prefers-reduced-motion: reduce) { .cube { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <h1 id="corner">…</h1>
+    <div class="cube" id="cube">
+      <div class="face"></div>
+      <div class="corner nw" data-c="0">1</div>
+      <div class="corner ne" data-c="1">2</div>
+      <div class="corner se" data-c="2">3</div>
+      <div class="corner sw" data-c="3">4</div>
+    </div>
+    <p id="detail"></p>
+    <p class="shout">4 SIMULTANEOUS DAYS IN SINGLE ROTATION</p>
+    <p><a href="/digital-domain">Return to the digital domain</a></p>
+  </div>
+  <script>
+    const names = ['Midnight', 'Sunup', 'Midday', 'Sundown'];
+    const cube = document.getElementById('cube');
+    function tick() {
+      const now = new Date();
+      const h = now.getHours() + now.getMinutes() / 60;
+      const c = Math.floor(h / 6) % 4;
+      const next = new Date(now); next.setHours((c + 1) * 6 % 24, 0, 0, 0);
+      if (next <= now) next.setDate(next.getDate() + 1);
+      const mins = Math.round((next - now) / 60000);
+      document.getElementById('corner').textContent = `${names[c]} corner day`;
+      document.getElementById('detail').textContent =
+        `Corner ${c + 1} of 4. ${Math.floor(mins / 60)}h ${mins % 60}m until the ${names[(c + 1) % 4].toLowerCase()} corner.`;
+      document.querySelectorAll('.corner').forEach((el) => el.classList.toggle('on', Number(el.dataset.c) === c));
+      cube.style.transform = `rotate(${(h / 24) * 360}deg)`;
+    }
+    tick(); setInterval(tick, 15000);
+  </script>
+</body>
+</html>
