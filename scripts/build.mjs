@@ -1,9 +1,10 @@
 // Regenerates public/playthings/index.html from the folders in public/playthings/,
 // and refreshes the "latest" list on the home page between its marker comments.
-import { readdir, readFile, writeFile, stat } from 'node:fs/promises';
+import { readdir, readFile, writeFile, stat, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import path from 'node:path';
+import { renderCv } from './cv.mjs';
 
 const root = path.resolve(new URL('..', import.meta.url).pathname);
 const pub = path.join(root, 'public');
@@ -84,5 +85,10 @@ const block = `<!-- playthings:start -->\n${tray(latest)}\n    <!-- playthings:e
 const next = home.replace(/<!-- playthings:start -->[\s\S]*?<!-- playthings:end -->/, block);
 if (next === home && !home.includes('playthings:start')) throw new Error('home page is missing the playthings markers');
 await writeFile(homePath, next);
+
+// CV
+const cv = JSON.parse(await readFile(path.join(root, 'cv', 'cv.json'), 'utf8'));
+await mkdir(path.join(pub, 'cv'), { recursive: true });
+await writeFile(path.join(pub, 'cv', 'index.html'), renderCv(cv));
 
 console.log(`${things.length} plaything(s) indexed: ${things.map((t) => t.slug).join(', ') || 'none'}`);

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matthew Cree, CV</title>
+  <meta name="description" content="Senior software engineer in Dromara, Northern Ireland. Experience, education and skills.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="cv">
+  <main>
+    <nav class="cv-nav">
+      <a class="tape small" href="/">mattcree.fyi</a>
+      <button type="button" class="print" onclick="window.print()">Save as PDF</button>
+    </nav>
+
+    <header class="cv-head">
+      <h1>Matthew Cree</h1>
+      <p class="lede">Senior software engineer, Dromara, Northern Ireland.</p>
+      <dl class="contact">
+        <dt>Email</dt><dd><a href="mailto:matthew.cree@gmail.com">matthew.cree@gmail.com</a></dd>
+        <dt>GitHub</dt><dd><a href="https://github.com/mattcree">github.com/mattcree</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></dd>
+      </dl>
+      <p>Software engineer with an interest in functional programming and distributed systems. Nine years across Salesforce DevOps tooling, education platforms, security analytics and consultancy, mostly full stack, with a habit of ending up in the low-level corners: git internals, merge algorithms, 3D interfaces, Erlang.</p>
+      <p>I studied music formally before computing and still play, mainly guitar.</p>
+    </header>
+
+    <section>
+      <h2>Experience</h2>
+
+      <article class="entry">
+        <div class="when">May 2022 to present</div>
+        <div class="what">
+          <h3>Senior Software Engineer<span class="at">Gearset, Belfast</span></h3>
+          <p>Full-stack engineer on a Salesforce DevOps platform used by over 3,000 enterprises.</p>
+          <ul><li>Work deep in git internals. Found two bugs in git itself and took them to the git mailing list with repeatable reproductions and an initial diagnosis.</li><li>Take the customer issues that exceed what support can handle, and mentor newer engineers on practice and collaboration.</li><li>Pushed for written decision records and design sketches in Notion, which made technical discussions easier to follow and revisit.</li></ul>
+          
+          <div class="project">
+            <h4>Observability</h4>
+            <p class="note">Winner of the Computing DevOps Excellence Award for best monitoring and performance tool.</p>
+            <p>Lead engineer. Real-time monitoring of Salesforce Flow failures and unhandled Apex exceptions. The system ingests Salesforce's auto-generated error emails, consolidates them into one view with the failed element and interview context, charts trends, and alerts on configurable rules and thresholds.</p>
+            <p class="stack">AWS (SES, SQS, SNS), Kubernetes, Terraform, React, TypeScript</p>
+          </div>
+          <div class="project">
+            <h4>Semantic merge conflict resolver</h4>
+            
+            <p>Led design and implementation. Resolves conflicts in Salesforce metadata XML by understanding its structure, covering the cases where a text merge produces invalid or wrong output, with a UI for both semantic and plain text conflicts.</p>
+            
+          </div>
+          <div class="project">
+            <h4>SAML single sign-on</h4>
+            
+            <p>SAML 2.0 authentication for enterprise customers against Okta, Auth0 and Azure AD, with certificate validation, response verification and session management.</p>
+            <p class="stack">C#, ASP.NET Core, React, TypeScript</p>
+          </div>
+          <div class="project">
+            <h4>Authorised connection management</h4>
+            
+            <p>Role-based control over which team members can reach which Salesforce environments, with audit logging of access and permission changes.</p>
+            <p class="stack">C#, ASP.NET Core, React, TypeScript, Salesforce API</p>
+          </div>
+          
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">March 2021 to May 2022</div>
+        <div class="what">
+          <h3>Polyglot Software Engineer<span class="at">Faria Education Group, Exam Systems team, remote</span></h3>
+          <p>Curriculum and learning systems for over 10,000 schools in 155 countries.</p>
+          <ul><li>Built MiniPD, a professional learning platform for educators, in Elixir, Phoenix and Vue.js.</li><li>Then moved to integration work connecting products across Faria's range in Ruby on Rails, CoffeeScript, AngularJS and PostgreSQL.</li></ul>
+          
+          <p class="stack">Elixir, Phoenix, Vue.js, AWS (SES, ECS, CloudFormation, RDS), Ruby on Rails, PostgreSQL</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">September 2019 to March 2021</div>
+        <div class="what">
+          <h3>Software Engineer<span class="at">Instil Software, Belfast</span></h3>
+          <p>Consultancy. Full-stack delivery across several client engagements.</p>
+          
+          
+          <div class="project">
+            <h4>Venue modelling and audio prediction tool for Bose</h4>
+            
+            <p>A CAD-like desktop application for sound engineers: draw the venue, place sources, and see a colour-coded sound pressure overlay that guides speaker placement. Owned application state management, the save file format and shutdown handling.</p>
+            <p class="stack">Electron, React, Redux, TypeScript, React Three Fiber, Three.js, Jest, Spectron</p>
+          </div>
+          <div class="project">
+            <h4>Dependaroo</h4>
+            
+            <p>A Bitbucket plugin that watches npm, Yarn, Gradle and Maven dependencies, raises pull requests for updates, and lets teams set policy on which updates go through automatically.</p>
+            <p class="stack">TypeScript, Node.js, Bitbucket API</p>
+          </div>
+          <div class="project">
+            <h4>Tyco support portal redesign</h4>
+            
+            <p>Led the UI overhaul of the portal used by security camera integrators: legacy code to React, responsive layout, and a component library to keep it consistent.</p>
+            <p class="stack">React, Redux, TypeScript, SCSS, Jest, React Testing Library</p>
+          </div>
+          
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">June 2018 to September 2019</div>
+        <div class="what">
+          <h3>Associate Software Engineer<span class="at">Instil Software, Belfast</span></h3>
+          
+          
+          
+          <div class="project">
+            <h4>American Dynamics support portal Android app</h4>
+            
+            <p>Knowledge base search, embedded forums, account management and biometric login, white-labelled per brand with Android product flavours.</p>
+            <p class="stack">Kotlin, Android Jetpack, coroutines, data binding</p>
+          </div>
+          <div class="project">
+            <h4>File management system</h4>
+            
+            <p>Hierarchy in RDS, files in S3, streaming uploads through a Dropwizard API, directory-level permissions and shareable links.</p>
+            <p class="stack">Angular, Dropwizard, Amazon S3, RDS, JOOQ</p>
+          </div>
+          
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">September 2017 to June 2018</div>
+        <div class="what">
+          <h3>Associate Software Engineer<span class="at">Alert Logic, Analytics Platform team, Belfast</span></h3>
+          <p>NGX, an Erlang system that detects security incidents from Snort and log sources.</p>
+          <ul><li>Found and fixed a production bug that was silently losing customer incident data.</li><li>Extended the incident API so data scientists and front-end teams could query it efficiently.</li></ul>
+          
+          <p class="stack">Erlang, Python, MySQL, Meck, Rebar3, Docker, AWS Lambda, Kinesis</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">September 2012 to August 2016</div>
+        <div class="what">
+          <h3>Ask4Help Assistant<span class="at">Northumbria University library, Newcastle upon Tyne</span></h3>
+          <p>Night shift at the university library through my music degree and MSc: student enquiries, welfare checks, patrols, and the basement coffee shop.</p>
+          
+          
+          
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+
+      <article class="entry">
+        <div class="when">2016 to 2017</div>
+        <div class="what">
+          <h3>MSc Computer Science, distinction<span class="at">Newcastle University</span></h3>
+          <p>Advanced programming, distributed computing, algorithms and complexity, database systems. Built Routeline, a rail navigation app using Dijkstra's algorithm on Play Framework, and BiSignal, real-time cyclist tracking over Phoenix channels. Research project on machine learning for music recommendation.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">2009 to 2012</div>
+        <div class="what">
+          <h3>BMus Jazz, Popular and Commercial Music, performance pathway<span class="at">University of Sunderland at The Sage Gateshead</span></h3>
+          <p>Guitar performance, theory, composition and arranging. Distinction for the final recital. Arranged for and led the guitar quartet Swing Fingers around the North East.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">2005 to 2007</div>
+        <div class="what">
+          <h3>BTEC National Diploma, Music Practice, distinction<span class="at">South Eastern Regional College</span></h3>
+          
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>TypeScript, JavaScript, C#, Elixir, Erlang, Java, Kotlin, Python, Ruby</dd>
+        <dt>Front end</dt><dd>React, Redux, Vue.js, Electron, Three.js and React Three Fiber, Storybook, Jest and Testing Library</dd>
+        <dt>Back end</dt><dd>ASP.NET Core, Phoenix, Rails, Dropwizard, Node.js, PostgreSQL, MySQL</dd>
+        <dt>Infrastructure</dt><dd>AWS (Lambda, S3, SES, SQS, SNS, Kinesis, ECS, CDK), Kubernetes, Terraform, Docker, Linux, git internals</dd>
+        <dt>Mobile</dt><dd>Android with Kotlin, some Swift</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Elsewhere</h2>
+      <p>Away from work I build games, poke at old radios, and run a cupboard of servers. First computer: a Sinclair ZX Spectrum +2. Some of it is in the <a href="/playthings">playthings</a>.</p>
+    </section>
+  </main>
+</body>
+</html>

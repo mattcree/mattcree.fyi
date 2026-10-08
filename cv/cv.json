@@ -1,0 +1,150 @@
+{
+  "name": "Matthew Cree",
+  "headline": "Senior software engineer",
+  "location": "Dromara, Northern Ireland",
+  "contact": {
+    "email": "matthew.cree@gmail.com",
+    "github": "mattcree",
+    "linkedin": "matthew-cree"
+  },
+  "summary": [
+    "Software engineer with an interest in functional programming and distributed systems. Nine years across Salesforce DevOps tooling, education platforms, security analytics and consultancy, mostly full stack, with a habit of ending up in the low-level corners: git internals, merge algorithms, 3D interfaces, Erlang.",
+    "I studied music formally before computing and still play, mainly guitar."
+  ],
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "Gearset",
+      "location": "Belfast",
+      "period": "May 2022 to present",
+      "summary": "Full-stack engineer on a Salesforce DevOps platform used by over 3,000 enterprises.",
+      "points": [
+        "Work deep in git internals. Found two bugs in git itself and took them to the git mailing list with repeatable reproductions and an initial diagnosis.",
+        "Take the customer issues that exceed what support can handle, and mentor newer engineers on practice and collaboration.",
+        "Pushed for written decision records and design sketches in Notion, which made technical discussions easier to follow and revisit."
+      ],
+      "projects": [
+        {
+          "title": "Observability",
+          "note": "Winner of the Computing DevOps Excellence Award for best monitoring and performance tool.",
+          "body": "Lead engineer. Real-time monitoring of Salesforce Flow failures and unhandled Apex exceptions. The system ingests Salesforce's auto-generated error emails, consolidates them into one view with the failed element and interview context, charts trends, and alerts on configurable rules and thresholds.",
+          "stack": "AWS (SES, SQS, SNS), Kubernetes, Terraform, React, TypeScript"
+        },
+        {
+          "title": "Semantic merge conflict resolver",
+          "body": "Led design and implementation. Resolves conflicts in Salesforce metadata XML by understanding its structure, covering the cases where a text merge produces invalid or wrong output, with a UI for both semantic and plain text conflicts."
+        },
+        {
+          "title": "SAML single sign-on",
+          "body": "SAML 2.0 authentication for enterprise customers against Okta, Auth0 and Azure AD, with certificate validation, response verification and session management.",
+          "stack": "C#, ASP.NET Core, React, TypeScript"
+        },
+        {
+          "title": "Authorised connection management",
+          "body": "Role-based control over which team members can reach which Salesforce environments, with audit logging of access and permission changes.",
+          "stack": "C#, ASP.NET Core, React, TypeScript, Salesforce API"
+        }
+      ]
+    },
+    {
+      "role": "Polyglot Software Engineer",
+      "company": "Faria Education Group",
+      "location": "Exam Systems team, remote",
+      "period": "March 2021 to May 2022",
+      "summary": "Curriculum and learning systems for over 10,000 schools in 155 countries.",
+      "points": [
+        "Built MiniPD, a professional learning platform for educators, in Elixir, Phoenix and Vue.js.",
+        "Then moved to integration work connecting products across Faria's range in Ruby on Rails, CoffeeScript, AngularJS and PostgreSQL."
+      ],
+      "stack": "Elixir, Phoenix, Vue.js, AWS (SES, ECS, CloudFormation, RDS), Ruby on Rails, PostgreSQL"
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Instil Software",
+      "location": "Belfast",
+      "period": "September 2019 to March 2021",
+      "summary": "Consultancy. Full-stack delivery across several client engagements.",
+      "projects": [
+        {
+          "title": "Venue modelling and audio prediction tool for Bose",
+          "body": "A CAD-like desktop application for sound engineers: draw the venue, place sources, and see a colour-coded sound pressure overlay that guides speaker placement. Owned application state management, the save file format and shutdown handling.",
+          "stack": "Electron, React, Redux, TypeScript, React Three Fiber, Three.js, Jest, Spectron"
+        },
+        {
+          "title": "Dependaroo",
+          "body": "A Bitbucket plugin that watches npm, Yarn, Gradle and Maven dependencies, raises pull requests for updates, and lets teams set policy on which updates go through automatically.",
+          "stack": "TypeScript, Node.js, Bitbucket API"
+        },
+        {
+          "title": "Tyco support portal redesign",
+          "body": "Led the UI overhaul of the portal used by security camera integrators: legacy code to React, responsive layout, and a component library to keep it consistent.",
+          "stack": "React, Redux, TypeScript, SCSS, Jest, React Testing Library"
+        }
+      ]
+    },
+    {
+      "role": "Associate Software Engineer",
+      "company": "Instil Software",
+      "location": "Belfast",
+      "period": "June 2018 to September 2019",
+      "projects": [
+        {
+          "title": "American Dynamics support portal Android app",
+          "body": "Knowledge base search, embedded forums, account management and biometric login, white-labelled per brand with Android product flavours.",
+          "stack": "Kotlin, Android Jetpack, coroutines, data binding"
+        },
+        {
+          "title": "File management system",
+          "body": "Hierarchy in RDS, files in S3, streaming uploads through a Dropwizard API, directory-level permissions and shareable links.",
+          "stack": "Angular, Dropwizard, Amazon S3, RDS, JOOQ"
+        }
+      ]
+    },
+    {
+      "role": "Associate Software Engineer",
+      "company": "Alert Logic",
+      "location": "Analytics Platform team, Belfast",
+      "period": "September 2017 to June 2018",
+      "summary": "NGX, an Erlang system that detects security incidents from Snort and log sources.",
+      "points": [
+        "Found and fixed a production bug that was silently losing customer incident data.",
+        "Extended the incident API so data scientists and front-end teams could query it efficiently."
+      ],
+      "stack": "Erlang, Python, MySQL, Meck, Rebar3, Docker, AWS Lambda, Kinesis"
+    },
+    {
+      "role": "Ask4Help Assistant",
+      "company": "Northumbria University library",
+      "location": "Newcastle upon Tyne",
+      "period": "September 2012 to August 2016",
+      "summary": "Night shift at the university library through my music degree and MSc: student enquiries, welfare checks, patrols, and the basement coffee shop."
+    }
+  ],
+  "education": [
+    {
+      "title": "MSc Computer Science, distinction",
+      "place": "Newcastle University",
+      "period": "2016 to 2017",
+      "body": "Advanced programming, distributed computing, algorithms and complexity, database systems. Built Routeline, a rail navigation app using Dijkstra's algorithm on Play Framework, and BiSignal, real-time cyclist tracking over Phoenix channels. Research project on machine learning for music recommendation."
+    },
+    {
+      "title": "BMus Jazz, Popular and Commercial Music, performance pathway",
+      "place": "University of Sunderland at The Sage Gateshead",
+      "period": "2009 to 2012",
+      "body": "Guitar performance, theory, composition and arranging. Distinction for the final recital. Arranged for and led the guitar quartet Swing Fingers around the North East."
+    },
+    {
+      "title": "BTEC National Diploma, Music Practice, distinction",
+      "place": "South Eastern Regional College",
+      "period": "2005 to 2007"
+    }
+  ],
+  "skills": [
+    { "group": "Languages", "items": "TypeScript, JavaScript, C#, Elixir, Erlang, Java, Kotlin, Python, Ruby" },
+    { "group": "Front end", "items": "React, Redux, Vue.js, Electron, Three.js and React Three Fiber, Storybook, Jest and Testing Library" },
+    { "group": "Back end", "items": "ASP.NET Core, Phoenix, Rails, Dropwizard, Node.js, PostgreSQL, MySQL" },
+    { "group": "Infrastructure", "items": "AWS (Lambda, S3, SES, SQS, SNS, Kinesis, ECS, CDK), Kubernetes, Terraform, Docker, Linux, git internals" },
+    { "group": "Mobile", "items": "Android with Kotlin, some Swift" }
+  ],
+  "elsewhere": "Away from work I build games, poke at old radios, and run a cupboard of servers. First computer: a Sinclair ZX Spectrum +2."
+}
