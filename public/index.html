@@ -12,21 +12,25 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main class="sheet">
-    <div class="left">
+  <main class="comp">
+    <div class="cell c-name">
       <h1 class="name"><span>Matthew</span><span>Cree</span></h1>
-      <p class="lede">Software engineer in Dromara, Northern Ireland. Outside work I build games, poke at old radios, and keep a cupboard of servers that mostly behaves.</p>
     </div>
-    <div class="right">
-      <div class="plane">
-        <dl>
-          <dt>Email</dt><dd><a href="mailto:mattcree@proton.me">mattcree@proton.me</a></dd>
-          <dt>GitHub</dt><dd><a href="https://github.com/mattcree">github.com/mattcree</a></dd>
-          <dt>LinkedIn</dt><dd><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></dd>
-          <dt>CV</dt><dd><a href="https://cv.mattcree.fyi">cv.mattcree.fyi</a></dd>
-        </dl>
-      </div>
 
+    <div class="cell c-lede">
+      <p class="lede">Software engineer in Dromara, Northern Ireland. Outside work I build games, poke at old radios, and keep a cupboard of servers that mostly behaves.</p>
+      <a class="cv" href="https://cv.mattcree.fyi">Read the CV</a>
+    </div>
+
+    <div class="cell c-tag"><a class="tag" href="/">mattcree.fyi</a></div>
+
+    <div class="cell c-old">
+      <p>Before this, mattcree.fyi was a very different website. It lives on, unchanged, at <a href="/digital-domain">/digital-domain</a>.</p>
+    </div>
+
+    <div class="cell c-bar" aria-hidden="true"></div>
+
+    <div class="cell c-things">
       <h2>Playthings</h2>
       <p>Small things built when a question needed a toy to answer it. Some are useful. Most are not.</p>
       <!-- playthings:start -->
@@ -38,11 +42,16 @@
       </li>
     </ul>
       <!-- playthings:end -->
-      <p style="margin-top:1rem"><a href="/playthings">All playthings</a></p>
+      <p class="more"><a href="/playthings">All playthings</a></p>
+    </div>
 
-      <footer>
-        <p>Before this, mattcree.fyi was a very different website. It lives on, unchanged, at <a href="/digital-domain">/digital-domain</a>.</p>
-      </footer>
+    <div class="cell c-contact">
+      <ul class="contact">
+        <li><small>Email</small><a href="mailto:mattcree@proton.me">mattcree@proton.me</a></li>
+        <li><small>GitHub</small><a href="https://github.com/mattcree">github.com/mattcree</a></li>
+        <li><small>LinkedIn</small><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></li>
+        <li><small>CV</small><a href="https://cv.mattcree.fyi">cv.mattcree.fyi</a></li>
+      </ul>
     </div>
   </main>
 </body>
