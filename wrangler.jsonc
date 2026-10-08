@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mattcree-fyi",
+  "compatibility_date": "2026-10-06",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "mattcree.fyi", "custom_domain": true },
+    { "pattern": "www.mattcree.fyi", "custom_domain": true }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

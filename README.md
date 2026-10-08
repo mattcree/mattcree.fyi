@@ -1,6 +1,6 @@
 # mattcree.fyi
 
-Static site. No framework. `public/` is what gets deployed. Hosted on Cloudflare Pages (project `mattcree-fyi`), DNS on Cloudflare.
+Static site. No framework. `public/` is what gets deployed. Hosted on Cloudflare Workers static assets (worker `mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare.
 
 ```
 public/
@@ -11,17 +11,17 @@ public/
     <slug>/index.html   one folder per plaything
     <slug>/meta.json    optional: { "title", "blurb", "date", "wide" }
   digital-domain/       the previous site, untouched
-  _redirects            Cloudflare Pages redirects for the old root URLs
-  404.html              without this, Pages serves / for every unknown path
+  _redirects            redirects for the old root URLs
+  404.html              served for unknown paths (not_found_handling in wrangler.jsonc)
 ```
 
 ## Adding a plaything
 
 1. Drop a folder into `public/playthings/` with an `index.html` in it. Anything self-contained works, including a Claude artifact saved as HTML.
 2. Optionally add `meta.json` beside it. Without one, the title comes from `<title>`, the blurb from `<meta name="description">`, and the date from the folder's first git commit.
-3. Run `npm run build` to regenerate the index. Pages runs this on every deploy anyway, so committing the folder is enough.
+3. Run `npm run build` to regenerate the index. The deploy runs this anyway, so committing the folder is enough.
 
-Pages clones shallowly, so the git-date fallback may not work in its builds. Put a `date` in `meta.json` if the date matters.
+Cloudflare Builds clone shallowly, so the git-date fallback may not work there. Put a `date` in `meta.json` if the date matters.
 
 `"wide": true` in `meta.json` makes the tile span two columns on the playthings page.
 
@@ -33,11 +33,12 @@ npm run dev
 
 ## Deploying
 
-Pushes to `main` deploy automatically once the repo is connected in the Cloudflare dashboard
-(Workers & Pages, project settings: build command `npm run build`, output directory `public`).
-
-Manual deploy from this machine:
-
 ```
-npm run build && npx wrangler pages deploy public --project-name mattcree-fyi
+npm run deploy
 ```
+
+That builds and runs `wrangler deploy` (needs `npx wrangler login` once per machine). Custom domains are declared in
+`wrangler.jsonc`, so the deploy keeps DNS pointed at the worker.
+
+For deploy-on-push, connect the GitHub repo in the Cloudflare dashboard under the worker's Settings, Build:
+build command `npm run build`, deploy command `npx wrangler deploy`.

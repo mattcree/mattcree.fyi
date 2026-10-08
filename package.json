@@ -4,6 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "dev": "npm run build && npx -y serve public"
+    "dev": "npm run build && npx -y serve public",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.148.0"
   }
 }
