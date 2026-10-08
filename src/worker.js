@@ -8,8 +8,9 @@ export default {
     if (url.hostname === 'cv.mattcree.fyi') {
       if (url.pathname === '/' || url.pathname === '/index.html') {
         url.pathname = '/cv/';
-      } else if (url.pathname.startsWith('/cv')) {
-        // Don't let the subdomain also answer at /cv/cv/.
+      } else if (url.pathname === '/cv' || url.pathname === '/cv/' || url.pathname === '/cv/index.html') {
+        // Don't let the subdomain also answer at /cv/. Other /cv/* paths are
+        // the page's own assets (cv.css) and pass through.
         return Response.redirect(`${url.origin}/`, 301);
       }
       return env.ASSETS.fetch(new Request(url, request));
