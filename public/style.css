@@ -1,6 +1,7 @@
 /* mattcree.fyi
-   A composition: blocks of yellow, pink, white and black, separated by black bars.
-   The grid gap is the black line. One typeface. Nothing decorative. */
+   A composition: blocks of yellow, white and black, separated by black bars.
+   The grid gap is the black line. Pink is a text colour, only ever on black.
+   One typeface. Nothing decorative. */
 
 :root {
   --yellow: #ffd600;
@@ -48,7 +49,7 @@ p:last-child { margin-bottom: 0; }
 .c-old  { grid-column: 2; grid-row: 2; background: var(--white); }
 .c-bar  { grid-column: 1 / 3; grid-row: 3; background: var(--black); padding: 0; }
 .c-things { grid-column: 1 / 3; grid-row: 4; }
-.c-contact { grid-column: 3; grid-row: 2 / 5; background: var(--pink); }
+.c-contact { grid-column: 3; grid-row: 2 / 5; background: var(--black); color: var(--pink); }
 
 /* Type. */
 .name {
@@ -82,8 +83,9 @@ p:last-child { margin-bottom: 0; }
 .contact { list-style: none; margin: 0; padding: 0; font-size: clamp(1.1rem, 1.5vw, 1.4rem); font-weight: 700; line-height: 1.25; }
 .contact li { margin-bottom: 0.65em; overflow-wrap: anywhere; }
 .contact li small { display: block; font-weight: 500; font-size: 0.72em; margin-bottom: 0.15em; }
-.contact a { text-decoration-color: var(--black); }
-.contact a:hover { text-decoration-color: var(--white); }
+.contact a { color: var(--pink); text-decoration-color: var(--pink); }
+.contact a:hover { text-decoration-color: var(--yellow); }
+.contact a:focus-visible { outline-color: var(--yellow); }
 
 h2 {
   font-size: clamp(1.6rem, 3vw, 2.6rem);
