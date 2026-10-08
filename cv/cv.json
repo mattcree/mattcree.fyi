@@ -1,148 +1,148 @@
 {
   "name": "Matthew Cree",
-  "headline": "Senior software engineer",
+  "headline": "Senior Software Engineer @ Gearset",
   "location": "Dromara, Northern Ireland",
-  "contact": {
-    "email": "matthew.cree@gmail.com",
-    "github": "mattcree",
-    "linkedin": "matthew-cree"
-  },
-  "summary": [
-    "Software engineer, nine years, full stack. Mostly developer tooling and backend systems. Interested in functional programming and distributed systems."
+  "contact": { "email": "matthew.cree@gmail.com", "github": "mattcree", "linkedin": "matthew-cree", "site": "mattcree.fyi" },
+  "summary": "Software engineer, nine years, full stack. Mostly developer tooling and backend systems. Interested in functional programming and distributed systems. Studied music before computing; still play guitar.",
+  "stats": [
+    { "value": "9", "label": "years as an engineer" },
+    { "value": "4", "label": "companies" },
+    { "value": "11", "label": "projects below" }
   ],
   "experience": [
     {
-      "role": "Senior Software Engineer",
-      "company": "Gearset",
-      "location": "Belfast",
-      "period": "May 2022 to present",
-      "summary": "Salesforce DevOps platform. C#, ASP.NET Core, React, TypeScript.",
-      "points": [
+      "title": "Senior Software Engineer at Gearset", "subtitle": "Belfast", "period": "May 2022 - Present", "icon": "FaBriefcase",
+      "tags": ["C#", "React", "TypeScript", "git"],
+      "body": [
+        "Salesforce DevOps platform. Full stack.",
         "Found two bugs in git while working on the semantic merge driver. Reported both on the git mailing list with reproductions.",
-        "Handle customer issues escalated past support.",
-        "Mentor newer engineers.",
+        "Handle customer issues escalated past support. Mentor newer engineers.",
         "Introduced decision records and written design proposals on the team."
-      ],
-      "projects": [
-        {
-          "title": "Observability",
-          "note": "Computing DevOps Excellence Award, best monitoring and performance tool.",
-          "body": "Lead engineer. Monitors Salesforce Flow failures and unhandled Apex exceptions. Ingests Salesforce's error emails, groups them, shows the failed element and interview context, charts trends, alerts on configurable thresholds.",
-          "stack": "AWS (SES, SQS, SNS), Kubernetes, Terraform, React, TypeScript"
-        },
-        {
-          "title": "Semantic merge conflict resolver",
-          "body": "Led design and implementation. Resolves conflicts in Salesforce metadata XML using its structure rather than text. UI for semantic and text conflicts."
-        },
-        {
-          "title": "SAML single sign-on",
-          "body": "SAML 2.0 for enterprise customers. Okta, Auth0, Azure AD. Certificate validation, response verification, session management."
-        },
-        {
-          "title": "Authorised connection management",
-          "body": "Role-based access to Salesforce environments per team member. Audit log of access and permission changes."
-        }
       ]
     },
     {
-      "role": "Polyglot Software Engineer",
-      "company": "Faria Education Group",
-      "location": "Exam Systems team, remote",
-      "period": "March 2021 to May 2022",
-      "summary": "Curriculum and learning systems for schools.",
-      "points": [
+      "title": "Polyglot Software Engineer at Faria Education Group", "subtitle": "Exam Systems team, remote", "period": "March 2021 - May 2022", "icon": "FaCode",
+      "tags": ["Elixir", "Phoenix", "Vue.js", "Rails", "AWS"],
+      "body": [
+        "Curriculum and learning systems for schools.",
         "Built MiniPD, a professional learning platform for educators. Elixir, Phoenix, Vue.js.",
         "Integration work between Faria products. Ruby on Rails, CoffeeScript, AngularJS, PostgreSQL."
-      ],
-      "stack": "AWS (SES, ECS, CloudFormation, RDS)"
-    },
-    {
-      "role": "Software Engineer",
-      "company": "Instil Software",
-      "location": "Belfast",
-      "period": "September 2019 to March 2021",
-      "summary": "Consultancy.",
-      "projects": [
-        {
-          "title": "Venue modelling and audio prediction tool, Bose",
-          "body": "Desktop CAD-style tool for sound engineers. Draw a venue, place speakers, see predicted sound pressure levels as a colour overlay. Owned state management, save file format and shutdown handling.",
-          "stack": "Electron, React, Redux, TypeScript, React Three Fiber, Three.js, Jest, Spectron"
-        },
-        {
-          "title": "Dependaroo",
-          "body": "Bitbucket plugin. Detects npm, Yarn, Gradle and Maven dependency updates, opens pull requests, applies per-team update policy.",
-          "stack": "TypeScript, Node.js, Bitbucket API"
-        },
-        {
-          "title": "Tyco support portal redesign",
-          "body": "Led the UI rewrite from legacy code to React. Responsive layout, component library.",
-          "stack": "React, Redux, TypeScript, SCSS, Jest, React Testing Library"
-        }
       ]
     },
     {
-      "role": "Associate Software Engineer",
-      "company": "Instil Software",
-      "location": "Belfast",
-      "period": "June 2018 to September 2019",
-      "projects": [
-        {
-          "title": "American Dynamics support portal, Android",
-          "body": "Knowledge base search, forums, account management, biometric login. White-labelled per brand with product flavours.",
-          "stack": "Kotlin, Android Jetpack, coroutines, data binding"
-        },
-        {
-          "title": "File management system",
-          "body": "Directory tree in RDS, files in S3, streaming uploads via Dropwizard, per-directory permissions, share links.",
-          "stack": "Angular, Dropwizard, Amazon S3, RDS, JOOQ"
-        }
+      "title": "Software Engineer at Instil Software", "subtitle": "Belfast", "period": "September 2019 - March 2021", "icon": "FaServer",
+      "tags": ["React", "TypeScript", "Electron", "AWS CDK"],
+      "body": [
+        "Consultancy. Full-stack delivery on client projects.",
+        "Bose venue modelling tool, Dependaroo, Tyco support portal redesign. Details under projects."
       ]
     },
     {
-      "role": "Associate Software Engineer",
-      "company": "Alert Logic",
-      "location": "Analytics Platform team, Belfast",
-      "period": "September 2017 to June 2018",
-      "summary": "NGX, an Erlang security incident detection system fed by Snort and log sources.",
-      "points": [
+      "title": "Associate Software Engineer at Instil Software", "subtitle": "Belfast", "period": "June 2018 - September 2019", "icon": "FaLaptopCode",
+      "tags": ["Kotlin", "Android", "Angular", "Java"],
+      "body": [
+        "Consultancy.",
+        "American Dynamics support portal Android app. File management system on S3 and Dropwizard. Details under projects."
+      ]
+    },
+    {
+      "title": "Associate Software Engineer at Alert Logic", "subtitle": "Analytics Platform team, Belfast", "period": "September 2017 - June 2018", "icon": "FaCode",
+      "tags": ["Erlang", "Python", "MySQL", "AWS"],
+      "body": [
+        "NGX, an Erlang security incident detection system fed by Snort and log sources.",
         "Fixed a production bug that was dropping customer incident data.",
         "Extended the incident API for data science and front-end use."
-      ],
-      "stack": "Erlang, Python, MySQL, Meck, Rebar3, Docker, AWS Lambda, Kinesis"
+      ]
     },
     {
-      "role": "Ask4Help Assistant",
-      "company": "Northumbria University library",
-      "location": "Newcastle upon Tyne",
-      "period": "September 2012 to August 2016",
-      "summary": "Night shift at the university library during my degrees."
+      "title": "Ask4Help Assistant at Northumbria University", "subtitle": "Newcastle upon Tyne", "period": "September 2012 - August 2016", "icon": "FaUserTie",
+      "body": ["Night shift at the university library during my degrees."]
     }
+  ],
+  "projects": [
+    {
+      "title": "Observability", "subtitle": "Error monitoring for Salesforce Flow and Apex. Gearset.", "period": "2023", "icon": "FaTrophy",
+      "tags": ["Award winner", "AWS", "Kubernetes", "Terraform"],
+      "body": [
+        "Lead engineer.",
+        "Monitors Flow failures and unhandled Apex exceptions. Ingests Salesforce's error emails, groups them, shows the failed element and interview context, charts trends, alerts on configurable thresholds.",
+        "Computing DevOps Excellence Award, best monitoring and performance tool."
+      ]
+    },
+    {
+      "title": "Semantic merge conflict resolver", "subtitle": "Conflict resolution for Salesforce metadata. Gearset.", "period": "2022-2023", "icon": "FaStar",
+      "tags": ["git", "C#", "React"],
+      "body": ["Led design and implementation.", "Resolves conflicts in Salesforce metadata XML using its structure rather than text. UI for semantic and text conflicts."]
+    },
+    {
+      "title": "SAML single sign-on", "subtitle": "Enterprise SSO. Gearset.", "period": "2022-2023", "icon": "FaLock",
+      "tags": ["SAML 2.0", "C#", "ASP.NET Core"],
+      "body": ["Okta, Auth0, Azure AD.", "Certificate validation, response verification, session management."]
+    },
+    {
+      "title": "Authorised connection management", "subtitle": "Access control for Salesforce environments. Gearset.", "period": "2022-2023", "icon": "FaShieldAlt",
+      "tags": ["C#", "React", "Salesforce API"],
+      "body": ["Role-based access per team member. Audit log of access and permission changes."]
+    },
+    {
+      "title": "Venue modelling and audio prediction tool", "subtitle": "Desktop CAD-style tool for sound engineers. Bose, via Instil.", "period": "2020-2021", "icon": "FaVolumeUp",
+      "tags": ["Electron", "React", "Three.js", "TypeScript"],
+      "body": ["Draw a venue, place speakers, see predicted sound pressure levels as a colour overlay.", "Owned state management, save file format and shutdown handling."]
+    },
+    {
+      "title": "Dependaroo", "subtitle": "Dependency updates for Bitbucket. Instil.", "period": "2020", "icon": "FaCodeBranch",
+      "tags": ["TypeScript", "Node.js", "Bitbucket API"],
+      "body": ["Detects npm, Yarn, Gradle and Maven updates, opens pull requests, applies per-team update policy."]
+    },
+    {
+      "title": "Tyco support portal redesign", "subtitle": "Web portal for security camera integrators. Instil.", "period": "2019-2020", "icon": "FaDesktop",
+      "tags": ["React", "Redux", "TypeScript", "SCSS"],
+      "body": ["Led the UI rewrite from legacy code to React. Responsive layout, component library."]
+    },
+    {
+      "title": "American Dynamics support portal, Android", "subtitle": "Mobile client for the support portal. Instil.", "period": "2019", "icon": "FaMobileAlt",
+      "tags": ["Kotlin", "Android Jetpack", "Coroutines"],
+      "body": ["Knowledge base search, forums, account management, biometric login.", "White-labelled per brand with product flavours."]
+    },
+    {
+      "title": "File management system", "subtitle": "Web file manager on S3. Instil.", "period": "2019", "icon": "FaFolder",
+      "tags": ["Angular", "Dropwizard", "S3", "RDS"],
+      "body": ["Directory tree in RDS, files in S3, streaming uploads via Dropwizard, per-directory permissions, share links."]
+    },
+    {
+      "title": "BiSignal", "subtitle": "Live cyclist tracking. Newcastle University.", "period": "2017", "icon": "FaCode",
+      "tags": ["Phoenix", "PostgreSQL", "Google Maps API"],
+      "body": ["Streams participant locations over Phoenix channels."]
+    },
+    {
+      "title": "Routeline", "subtitle": "Rail route finding. Newcastle University.", "period": "2017", "icon": "FaCode",
+      "tags": ["Play Framework", "MySQL"],
+      "body": ["Dijkstra's algorithm over a rail network. Admin panel for lines, stops and stations."]
+    }
+  ],
+  "techStack": [
+    { "title": "Languages", "icon": "FaCode", "gradient": "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)", "skills": ["TypeScript", "JavaScript", "C#", "Elixir", "Erlang", "Java", "Kotlin", "Python", "Ruby"] },
+    { "title": "Front end", "icon": "FaReact", "gradient": "linear-gradient(135deg, #10b981 0%, #06b6d4 100%)", "skills": ["React", "Redux", "Vue.js", "Electron", "Three.js", "Storybook", "Jest"] },
+    { "title": "Back end", "icon": "FaServer", "gradient": "linear-gradient(135deg, #f59e0b 0%, #f97316 100%)", "skills": ["ASP.NET Core", "Phoenix", "Rails", "Dropwizard", "Node.js"] },
+    { "title": "Databases", "icon": "FaDatabase", "gradient": "linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)", "skills": ["PostgreSQL", "MySQL", "RDS", "JOOQ"] },
+    { "title": "DevOps and cloud", "icon": "FaTools", "gradient": "linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%)", "skills": ["AWS", "Kubernetes", "Terraform", "Docker", "Linux", "git internals"] },
+    { "title": "Mobile and desktop", "icon": "FaMobileAlt", "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)", "skills": ["Android", "Kotlin", "Electron"] }
   ],
   "education": [
     {
-      "title": "MSc Computer Science, distinction",
-      "place": "Newcastle University",
-      "period": "2016 to 2017",
-      "body": "Projects: Routeline, rail route finding with Dijkstra's algorithm on Play Framework. BiSignal, live cyclist tracking over Phoenix channels. Research project on music recommendation."
+      "title": "MSc Computer Science", "subtitle": "Newcastle University", "period": "2016 - 2017", "icon": "FaGraduationCap",
+      "tags": ["Distinction"],
+      "body": ["Projects: Routeline and BiSignal, listed above. Research project on music recommendation."]
     },
     {
-      "title": "BMus Jazz, Popular and Commercial Music",
-      "place": "University of Sunderland at The Sage Gateshead",
-      "period": "2009 to 2012",
-      "body": "Guitar, performance pathway. Distinction for the final recital. Arranged for and led a guitar quartet."
+      "title": "BMus Jazz, Popular and Commercial Music", "subtitle": "University of Sunderland at The Sage Gateshead", "period": "2009 - 2012", "icon": "FaMusic",
+      "tags": ["Performance", "Composition"],
+      "body": ["Guitar, performance pathway. Distinction for the final recital. Arranged for and led a guitar quartet."]
     },
     {
-      "title": "BTEC National Diploma, Music Practice, distinction",
-      "place": "South Eastern Regional College",
-      "period": "2005 to 2007"
+      "title": "BTEC National Diploma, Music Practice", "subtitle": "South Eastern Regional College", "period": "2005 - 2007", "icon": "FaMusic",
+      "tags": ["Distinction"],
+      "body": ["Performance, theory, audio engineering, live sound."]
     }
-  ],
-  "skills": [
-    { "group": "Languages", "items": "TypeScript, JavaScript, C#, Elixir, Erlang, Java, Kotlin, Python, Ruby" },
-    { "group": "Front end", "items": "React, Redux, Vue.js, Electron, Three.js, Storybook, Jest" },
-    { "group": "Back end", "items": "ASP.NET Core, Phoenix, Rails, Dropwizard, Node.js, PostgreSQL, MySQL" },
-    { "group": "Infrastructure", "items": "AWS, Kubernetes, Terraform, Docker, Linux, git internals" },
-    { "group": "Mobile", "items": "Android, Kotlin" }
-  ],
-  "elsewhere": "Games, old radios, a homelab. First computer: Sinclair ZX Spectrum +2."
+  ]
 }

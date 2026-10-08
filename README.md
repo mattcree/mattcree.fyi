@@ -30,8 +30,12 @@ Cloudflare Builds clone shallowly, so the git-date fallback may not work there. 
 ## CV
 
 Content lives in `cv/cv.json`; `scripts/cv.mjs` turns it into `public/cv/index.html` on every build.
-Served at https://cv.mattcree.fyi (the worker rewrites that host to `/cv/`). Projects sit under the role they happened
-at. The page has a print stylesheet, so "Save as PDF" in the browser is the PDF version. Keep the copy terse and factual.
+Served at https://cv.mattcree.fyi (the worker rewrites that host to `/cv/`).
+
+The design is the old developer-story Next.js app (github.com/mattcree/developer-story), ported to static HTML:
+`public/cv/cv.css` is that app's compiled CSS with the self-hosted Inter swapped for Google Fonts, and `cv/icons.json`
+holds the react-icons SVGs it used, pre-rendered. Dark mode is a `dark` class on `<html>`, stored in localStorage.
+Keep the copy terse and factual.
 
 ## Local preview
 
