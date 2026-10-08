@@ -41,15 +41,15 @@ const things = (await Promise.all(entries.map(readPlaything))).filter(Boolean).s
 
 const fmt = (iso) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 
-const tile = (t) => `      <a class="cell${t.wide ? ' wide' : ''}" href="/playthings/${esc(t.slug)}">
-        <strong>${esc(t.title)}</strong>
+const item = (t) => `      <li>
+        <a href="/playthings/${esc(t.slug)}">${esc(t.title)}</a>
         ${t.blurb ? `<span>${esc(t.blurb)}</span>` : ''}
         <time datetime="${esc(t.date)}">${fmt(t.date)}</time>
-      </a>`;
+      </li>`;
 
-const tray = (list) => list.length
-  ? `    <div class="tray">\n${list.map(tile).join('\n')}\n    </div>`
-  : `    <div class="tray empty"><p>Nothing in the tray yet.</p></div>`;
+const list = (l) => l.length
+  ? `    <ul class="things">\n${l.map(item).join('\n')}\n    </ul>`
+  : `    <p class="things empty">Nothing here yet.</p>`;
 
 const indexPage = `<!doctype html>
 <html lang="en">
@@ -61,15 +61,19 @@ const indexPage = `<!doctype html>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main>
-    <nav><a class="tape small" href="/">mattcree.fyi</a></nav>
-    <h1>Playthings</h1>
-    <p class="lede">Small things built when a question needed a toy to answer it. Some are useful. Most are not. Each one is a single page, so open it and poke.</p>
-${tray(things)}
+  <main class="sheet">
+    <div class="left">
+      <a class="site" href="/">mattcree.fyi</a>
+      <h1 class="page">Play&shy;things</h1>
+      <p class="lede">Small things built when a question needed a toy to answer it. Some are useful. Most are not. Each one is a single page, so open it and poke.</p>
+    </div>
+    <div class="right">
+${list(things)}
+    </div>
   </main>
 </body>
 </html>
@@ -81,7 +85,7 @@ await writeFile(path.join(dir, 'index.html'), indexPage);
 const homePath = path.join(pub, 'index.html');
 const home = await readFile(homePath, 'utf8');
 const latest = things.slice(0, 4);
-const block = `<!-- playthings:start -->\n${tray(latest)}\n    <!-- playthings:end -->`;
+const block = `<!-- playthings:start -->\n${list(latest)}\n      <!-- playthings:end -->`;
 const next = home.replace(/<!-- playthings:start -->[\s\S]*?<!-- playthings:end -->/, block);
 if (next === home && !home.includes('playthings:start')) throw new Error('home page is missing the playthings markers');
 await writeFile(homePath, next);

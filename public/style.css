@@ -1,192 +1,118 @@
 /* mattcree.fyi
-   One sheet for the home page and the playthings index.
-   Individual playthings bring their own styles. */
+   Four colours, one typeface, two rule weights. Nothing that carries no information. */
 
 :root {
-  --paper: #e9ece7;
-  --ink: #1b2a26;
-  --ink-soft: #4f5e59;
-  --rule: #c9cfca;
-  --mat: #2f6554;
-  --mat-line: rgba(255, 255, 255, 0.09);
-  --card: #efece3;
-  --tape: #121212;
-  --tape-text: #ffffff;
-  --link: #a84221;
-  --focus: #f2c94c;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #1f2624;
-    --ink: #e6e9e4;
-    --ink-soft: #9fada7;
-    --rule: #3a4541;
-    --mat: #244d41;
-    --card: #2b3431;
-    --tape: #0a0a0a;
-    --link: #f0a27e;
-  }
+  --yellow: #ffd600;
+  --pink: #ff2d95;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --thick: 6px solid var(--black);
+  --thin: 2px solid var(--black);
+  color-scheme: light only;
 }
 
 * { box-sizing: border-box; }
 
-html { background: var(--paper); }
+html { background: var(--yellow); }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  font-variation-settings: "opsz" 14, "wdth" 100;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  font-variation-settings: "wdth" 100;
   font-size: 1.0625rem;
-  line-height: 1.55;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 
-main {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 3rem 1rem 5rem;
-}
+a { color: var(--black); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-color: var(--pink); }
+a:focus-visible { outline: 3px solid var(--black); outline-offset: 3px; }
 
-@media (min-width: 40rem) {
-  main { padding: 4.5rem 1.5rem 6rem; }
-}
+p { margin: 0 0 1em; max-width: 34em; }
 
-a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
-a:focus-visible, .cell:focus-visible, .tape:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
+/* The split. Left column narrow, right column wide, one vertical rule between. */
+.sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  min-height: 100vh;
 }
-
-p { max-width: 36em; margin: 0 0 1.1em; }
-
-/* Label tape. One big one for the name; a small one as the home link. */
-.tape {
-  display: inline-block;
-  background: var(--tape);
-  color: var(--tape-text);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-variation-settings: "opsz" 96, "wdth" 92;
-  letter-spacing: 0.05em;
-  line-height: 1;
-  padding: 0.22em 0.42em 0.16em;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28), 0 -1px 0 rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
-}
-
-.tape.small {
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  padding: 0.4em 0.7em 0.32em;
-}
+.left { padding: 2rem 1.5rem 3rem; container-type: inline-size; }
+.right { padding: 2rem 1.5rem 3rem; border-left: var(--thick); }
 
 .name {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.5rem;
-  margin: 0 0 2.2rem;
-  font-size: clamp(2.4rem, 11vw, 5.6rem);
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.6rem, 15.5cqw, 8rem);
+  font-weight: 800;
+  font-variation-settings: "wdth" 112;
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
+.name span { display: block; }
 
-.name .tape:first-child { transform: rotate(-1.4deg); }
-.name .tape:last-child  { transform: rotate(0.8deg); }
+.lede { font-size: 1.25rem; line-height: 1.35; margin-bottom: 2rem; }
 
-nav { margin-bottom: 2.5rem; }
-
-h1 {
-  font-size: clamp(2rem, 7vw, 3.2rem);
-  font-weight: 700;
-  font-variation-settings: "opsz" 96, "wdth" 85;
-  line-height: 1;
-  margin: 0 0 1rem;
+/* The one pink plane. */
+.plane {
+  background: var(--pink);
+  color: var(--black);
+  padding: 1.25rem 1.5rem 1.35rem;
+  max-width: 26rem;
+  margin: 3.5rem 0 3rem 12%;
 }
+.plane dl { display: grid; grid-template-columns: max-content 1fr; column-gap: 1.25rem; row-gap: 0.35rem; margin: 0; }
+.plane dt { font-weight: 500; }
+.plane dd { margin: 0; overflow-wrap: anywhere; }
+.plane a { text-decoration-color: var(--black); }
+.plane a:hover { text-decoration-color: var(--white); }
 
 h2 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  font-variation-settings: "opsz" 32, "wdth" 90;
-  margin: 3rem 0 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+  padding-top: 1rem;
+  border-top: var(--thick);
 }
 
-.lede {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  font-variation-settings: "opsz" 24, "wdth" 100;
-  margin-bottom: 2rem;
+h1.page {
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 800;
+  font-variation-settings: "wdth" 112;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
 }
 
-/* Contact list */
-dl.contact {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: 1.5rem;
-  row-gap: 0.4rem;
-  margin: 0 0 1rem;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: 0.9rem 0;
-}
-dl.contact dt { color: var(--ink-soft); margin: 0; }
-dl.contact dd { margin: 0; overflow-wrap: anywhere; }
+/* Playthings: a list, not tiles. */
+.things { list-style: none; margin: 0; padding: 0; border-top: var(--thick); }
+.things li { padding: 1rem 0 1.1rem; border-bottom: var(--thin); }
+.things li:last-child { border-bottom: var(--thick); }
+.things a { font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+.things a:hover { text-decoration: underline; text-decoration-color: var(--pink); }
+.things span { display: block; max-width: 34em; margin-top: 0.25rem; }
+.things time { display: block; margin-top: 0.4rem; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.things.empty { border-bottom: var(--thick); padding: 1rem 0; }
 
-/* The tray: a cutting mat with things sitting on it. */
-.tray {
-  background-color: var(--mat);
-  background-image:
-    linear-gradient(var(--mat-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--mat-line) 1px, transparent 1px);
-  background-size: 1.5rem 1.5rem;
-  background-position: 0.75rem 0.75rem;
-  border-radius: 6px;
-  padding: 0.75rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 0.75rem;
-}
+.site { display: inline-block; font-weight: 700; text-decoration: none; margin-bottom: 2.5rem; }
+.site:hover { text-decoration: underline; text-decoration-color: var(--pink); }
 
-.tray.empty {
-  display: block;
-  color: #fff;
-  padding: 2.5rem 1.25rem;
-}
-.tray.empty p { margin: 0; opacity: 0.85; }
-
-.cell {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  min-height: 8.5rem;
-  padding: 0.9rem 1rem 0.8rem;
-  background: var(--card);
-  color: var(--ink);
-  text-decoration: none;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-.cell strong { font-weight: 700; font-variation-settings: "opsz" 24, "wdth" 92; line-height: 1.2; }
-.cell span { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.4; }
-.cell time { margin-top: auto; padding-top: 0.6rem; font-size: 0.8rem; color: var(--ink-soft); }
-.cell:hover strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
-
-@media (min-width: 30rem) {
-  .cell.wide { grid-column: span 2; }
-}
-
-.after-tray { margin-top: 0.9rem; }
-
-footer {
-  margin-top: 4rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
+footer { margin-top: 3rem; padding-top: 1rem; border-top: var(--thin); font-size: 0.95rem; }
 footer p { margin: 0; }
+
+@media (min-width: 52rem) {
+  .left { padding: 3rem 2.5rem 4rem 3rem; }
+  .right { padding: 3rem 3rem 4rem 2.5rem; }
+}
+
+@media (max-width: 52rem) {
+  .sheet { grid-template-columns: 1fr; min-height: 0; }
+  .right { border-left: 0; border-top: var(--thick); }
+  .plane { margin: 1.5rem 0 2.5rem 0; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }

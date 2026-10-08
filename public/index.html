@@ -4,42 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Matthew Cree</title>
-  <meta name="description" content="Software engineer in Dromara, Northern Ireland. Contact details and a tray of playthings.">
+  <meta name="description" content="Software engineer in Dromara, Northern Ireland. Contact details and playthings.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main>
-    <h1 class="name"><span class="tape">Matthew</span><span class="tape">Cree</span></h1>
+  <main class="sheet">
+    <div class="left">
+      <h1 class="name"><span>Matthew</span><span>Cree</span></h1>
+      <p class="lede">Software engineer in Dromara, Northern Ireland. Outside work I build games, poke at old radios, and keep a cupboard of servers that mostly behaves.</p>
+    </div>
+    <div class="right">
+      <div class="plane">
+        <dl>
+          <dt>Email</dt><dd><a href="mailto:mattcree@proton.me">mattcree@proton.me</a></dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/mattcree">github.com/mattcree</a></dd>
+          <dt>LinkedIn</dt><dd><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></dd>
+          <dt>CV</dt><dd><a href="https://cv.mattcree.fyi">cv.mattcree.fyi</a></dd>
+        </dl>
+      </div>
 
-    <p class="lede">Software engineer in Dromara, Northern Ireland. Outside work I build games, poke at old radios, and keep a cupboard of servers that mostly behaves.</p>
-
-    <dl class="contact">
-      <dt>Email</dt><dd><a href="mailto:mattcree@proton.me">mattcree@proton.me</a></dd>
-      <dt>GitHub</dt><dd><a href="https://github.com/mattcree">github.com/mattcree</a></dd>
-      <dt>LinkedIn</dt><dd><a href="https://uk.linkedin.com/in/matthew-cree">linkedin.com/in/matthew-cree</a></dd>
-      <dt>CV</dt><dd><a href="https://cv.mattcree.fyi">cv.mattcree.fyi</a></dd>
-    </dl>
-
-    <h2>Playthings</h2>
-    <p>Small things built when a question needed a toy to answer it. Some are useful. Most are not.</p>
-    <!-- playthings:start -->
-    <div class="tray">
-      <a class="cell wide" href="/playthings/tuner">
-        <strong>Design tuner</strong>
+      <h2>Playthings</h2>
+      <p>Small things built when a question needed a toy to answer it. Some are useful. Most are not.</p>
+      <!-- playthings:start -->
+    <ul class="things">
+      <li>
+        <a href="/playthings/tuner">Design tuner</a>
         <span>Sliders and switches for every part of a page's look. Tune it until it's yours, then copy the CSS.</span>
         <time datetime="2026-10-08">8 Oct 2026</time>
-      </a>
-    </div>
-    <!-- playthings:end -->
-    <p class="after-tray"><a href="/playthings">Everything in the tray</a></p>
+      </li>
+    </ul>
+      <!-- playthings:end -->
+      <p style="margin-top:1rem"><a href="/playthings">All playthings</a></p>
 
-    <footer>
-      <p>Before this, mattcree.fyi was a very different website. It lives on, unchanged, at <a href="/digital-domain">/digital-domain</a>. Best viewed in Netscape Navigator 4.0.</p>
-    </footer>
+      <footer>
+        <p>Before this, mattcree.fyi was a very different website. It lives on, unchanged, at <a href="/digital-domain">/digital-domain</a>.</p>
+      </footer>
+    </div>
   </main>
 </body>
 </html>

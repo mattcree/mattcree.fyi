@@ -1,6 +1,10 @@
 # mattcree.fyi
 
-Static site. No framework. `public/` is what gets deployed. Hosted on a Cloudflare Worker (`mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare. `src/worker.js` serves `public/`
+Static site. No framework. `public/` is what gets deployed.
+
+Design: De Stijl structure, Designers Republic colour. Yellow field, one pink plane, black type and rules, Archivo as the
+only typeface, no gradients, shadows, icons, corners or motion. Rule for additions: if removing it loses no information,
+it doesn't go in. The CV has its own look (paper) and the tuner is neutral grey on purpose. Hosted on a Cloudflare Worker (`mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare. `src/worker.js` serves `public/`
 and maps cv.mattcree.fyi onto `public/cv/`.
 
 ```
