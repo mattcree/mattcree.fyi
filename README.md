@@ -2,7 +2,7 @@
 
 Static site. No framework. `public/` is what gets deployed.
 
-Design: De Stijl structure, Designers Republic colour. A grid of yellow, white and black blocks where the black grid gap
+Design: De Stijl structure, Designers Republic colour. A grid of yellow and black blocks where the black grid gap
 is the line; hot pink is for headings only, at display size on yellow; Archivo as the only typeface; no gradients, shadows, icons, corners or motion. Every page is the
 same composition (`.comp` in `style.css`) with different cell contents. Rule for additions: if removing it loses no information,
 it doesn't go in. The CV has its own look (paper) and the tuner is neutral grey on purpose. Hosted on a Cloudflare Worker (`mattcree-fyi`, config in `wrangler.jsonc`), DNS on Cloudflare. `src/worker.js` serves `public/`

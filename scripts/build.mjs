@@ -69,7 +69,6 @@ const indexPage = `<!doctype html>
     <div class="cell c-name"><h1 class="page">Play&shy;things</h1></div>
     <div class="cell c-lede"><p class="lede">Small things built when a question needed a toy to answer it. Some are useful. Most are not. Each one is a single page, so open it and poke.</p></div>
     <div class="cell c-tag"><a class="tag" href="/">mattcree.fyi</a></div>
-    <div class="cell c-old"><p>Anything here can be dropped into a folder and it appears in this list. That's the whole publishing system.</p></div>
     <div class="cell c-bar" aria-hidden="true"></div>
     <div class="cell c-things">
 ${list(things)}
